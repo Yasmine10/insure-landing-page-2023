@@ -67,6 +67,48 @@ main {
 	flex-grow: 1;
 }
 
+/* Typography */
+
+body {
+	font-family: var(--ff-primary);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-regular);
+
+	color: var(--clr-neutral-400);
+}
+
+.heading {
+	font-family: var(--ff-secondary);
+	font-weight: var(--fw-regular);
+}
+
+.heading-xl {
+	font-size: var(--fs-heading-xl--mobile);
+	line-height: 0.8;
+	letter-spacing: -1px;
+}
+
+.heading-l {
+	font-size: var(--fs-heading-l--mobile);
+	line-height: 1;
+	letter-spacing: -0.778px;
+}
+
+.heading-m {
+	font-size: var(--fs-heading-m);
+	letter-spacing: -0.389px;
+}
+
+@media (min-width: 75em) {
+	.heading-xl {
+		font-size: var(--fs-heading-xl);
+	}
+
+	.heading-l {
+		font-size: var(--fs-heading-l);
+	}
+}
+
 /* Utility */
 
 .container {
@@ -100,6 +142,10 @@ main {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+}
+
+.bg-neutral-100 {
+	background-color: var(--clr-neutral-100);
 }
 
 /* Buttons */
@@ -141,3 +187,4 @@ main {
 	--btn-color: var(--clr-neutral-900);
 	--btn-color-hover: var(--clr-neutral-100);
 }
+
