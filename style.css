@@ -222,6 +222,52 @@ body {
 
 /* Header */
 
+.header {
+	padding-block: 1.25rem;
+}
+
+.header > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header .menu-toggle {
+	display: none;
+}
+
+.header__content {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.header__nav-list {
+	display: flex;
+	align-items: center;
+	gap: 1.625rem;
+}
+
+.header__nav-list a {
+	text-decoration: none;
+
+	font-size: var(--fs-header);
+	font-weight: var(--fw-regular);
+	letter-spacing: 1.5px;
+
+	transition: all 300ms ease-in-out;
+}
+
+.header__nav-list li:hover a,
+.header__nav-list li:focus a {
+	font-weight: var(--fw-bold);
+	color: var(--clr-neutral-900);
+}
+
+.header__cta-btn {
+	font-size: var(--fs-header);
+}
+
 /* Footer */
 
 .footer {
@@ -325,10 +371,6 @@ body {
 }
 
 /* Hero section */
-
-.hero {
-
-}
 
 .hero__image {
 	max-height: 28.125rem; /* 450px */
@@ -489,7 +531,6 @@ body {
 		padding-inline: 0;
 	}
 }
-
 
 /* Features section */
 
