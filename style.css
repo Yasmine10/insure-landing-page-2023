@@ -11,6 +11,11 @@ html {
 	font: inherit;
 }
 
+html,
+body {
+	height: 100%;
+}
+
 img,
 svg {
 	display: block;
@@ -64,6 +69,10 @@ body {
 	flex-direction: column;
 
 	min-height: 100vh;
+}
+
+.no-scroll {
+	overflow: hidden;
 }
 
 header,
@@ -215,6 +224,7 @@ body {
 	--btn-color: var(--clr-neutral-100);
 	--btn-color-hover: var(--clr-neutral-900);
 }
+
 .btn--primary.light {
 	--btn-color: var(--clr-neutral-900);
 	--btn-color-hover: var(--clr-neutral-100);
@@ -273,12 +283,63 @@ body {
 }
 
 @media (max-width: calc(48em - 0.0625em)) {
+	.header > div {
+		position: relative;
+
+		z-index: 1000;
+	}
+
 	.header .menu-toggle {
 		display: initial;
 	}
 
 	.header__content {
-		display: none;
+		display: flex; /* you don't need to use display: none because of the transform animation */
+		flex-direction: column;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 900;
+
+		min-height: calc(100vh - 3.25rem);
+		margin-top: 3.25rem;
+		padding-top: 2.5rem;
+
+		background-color: var(--clr-neutral-900);
+		background-image: url('/images/bg-pattern-mobile-nav.svg');
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		background-size: 100% 218px;
+		color: var(--clr-neutral-100);
+
+		transform: translateX(calc(100%));
+
+		transition: transform 300ms ease-in-out;
+	}
+
+	.header__content.show {
+		transform: translateX(0);
+	}
+
+	.header__nav-list {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.header__nav-list a {
+		font-size: var(--fs-header--mobile);
+	}
+
+	.header__cta-btn {
+		--btn-color: var(--clr-neutral-100) !important;
+		--btn-color-hover: var(--clr-neutral-900) !important;
+
+		font-size: var(--fs-header--mobile);
+		width: calc(100% - 3rem);
+		margin-inline: auto;
+		justify-content: center;
 	}
 }
 
